@@ -1,0 +1,18 @@
+header.header
+  .container
+    .header-logo(data-aos="fade")
+      .header-logo__img
+        img(src="/img/common/logo.svg", alt="" width="196" height="59")
+      .header-logo__text
+        img(src="/img/common/tagline.svg", alt="" width="370" height="16")
+    .header-phones(data-aos="fade" data-aos-delay="25")
+      .header-phones__phone
+          a(href="tel:8 (800) 777-68-94 ") 8 (800) 777-68-94
+      ul.header-phones__worktime
+        li Будни с 9-00 до 21-00
+        li Суббота с 10-00 до 19-00
+        li Воскресенье выходной день
+    .header-feedback(data-aos="fade" data-aos-delay="50")
+      a(href="#callback").header-feedback__btn.btn.btn-white.btn-with-icon
+        span Записаться на приём
+        +icons('#ic-go', 16)

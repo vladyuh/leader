@@ -1,0 +1,91 @@
+.popup__wrp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(30px);
+  display: flex;
+  z-index: 1001;
+  padding: 0px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+
+  @media screen and (min-width: 481px){
+    padding: 20px;
+  }
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .popup {
+    max-width: 480px;
+    position: relative;
+    width: 100%;
+    background: #AB9EDC;
+    padding: 60px 16px;
+    align-items: flex-start;
+    margin: auto 0 0 0;
+    color: #fff;
+
+    @media screen and (min-width: 480px) {
+      border-radius: 55px;
+      margin: auto;
+      padding: 60px 40px;
+    }
+
+    &-close {
+      position: absolute;
+      top: 34px;
+      right: 34px;
+      width: 16px;
+      height: 16px;
+
+      a{
+        display: block;
+        color: #fff;
+      }
+    }
+
+    .section-h3 {
+      margin-bottom: 32px;
+      font-size: 28px;
+      line-height: 40px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 36px;
+        line-height: 48px;
+      }
+    }
+
+    .btn{
+      width: 100%;
+    }
+
+    .form__submit{
+      padding-top: 16px;
+    }
+
+  }
+
+}
+
+.popup-politica{
+  max-width: 1000px !important;
+}
+
+.popup-thanks{
+  margin: 0 0 auto 0 !important;
+
+  @media screen and (min-width: 480px) {
+    margin: auto;
+  }
+}

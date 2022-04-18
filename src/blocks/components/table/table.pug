@@ -1,0 +1,12 @@
+mixin responsiveTable(data)
+    .table.table--responsive
+        table
+            thead
+                tr.head
+                    for items in data.head
+                        th= items
+            tbody
+                for items in data.body
+                    tr
+                        each item,index in items
+                            td(data-title=data.head[index])=item

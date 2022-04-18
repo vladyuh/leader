@@ -1,0 +1,106 @@
+mixin callbackPopup
+    .popup__wrp#callback
+        .popup.popup-callback
+            .popup-close
+                a(href="#close")
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 1L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1L17 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+            .popup-content
+                .section-h3.italic Записаться на прием
+                form(action="")
+                    .form__field
+                        +input({
+                            type: 'text',
+                            placeholder: "Ваше имя *",
+                            required: true,
+                        })
+                    .form__field
+                        +input({
+                            type: 'tel',
+                            placeholder: "Телефон для связи *",
+                            required: true,
+                        })
+                    .form__field
+                        +input({
+                            type: 'date',
+                            placeholder: "Когда связаться",
+                        })
+                    .form__field
+                        +input({
+                            type: 'text',
+                            placeholder: "Сообщение",
+                        })
+                    .form__field
+                        .form__caption Свяжемся в удобном для Вас мессенджере:
+                        .form__checkboxes
+                            +checkbox({
+                                label: 'Viber',
+                                check: false,
+                                disabled: false
+                            })
+                            +checkbox({
+                                label: 'WhatsApp',
+                                check: false,
+                                disabled: false
+                            })
+                            +checkbox({
+                                label: 'Telegram',
+                                check: false,
+                                disabled: false
+                            })
+                    .form__submit
+                        button.btn.btn-white.btn-with-icon(type="submit")
+                            span Отправить
+                            +icons('#ic-go',16)
+                    .form__agreement
+                        +checkbox({
+                            label: 'Я соглашаюсь с <a href="#politica"> политикой конфиденциальности</a>',
+                            check: true,
+                            disabled: false
+                        })
+mixin politicaPopup
+    .popup__wrp#politica
+        .popup.popup-politica
+            .popup-close
+                a(href="#close")
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 1L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1L17 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+            .popup-content
+                .section-h3.italic Политика конфиденциальности
+                .popup-content__text.
+                    Настоящий документ «Политика конфиденциальности» (далее по тексту – «Политика»)
+                    представляет собой правила использования /указать владельца сайта/
+                    (далее – «мы» и/или «Администрация») данных интернет-пользователей
+                    (далее «вы» и/или «Пользователь»), собираемых с использованием сайта
+                    / указать URL сайта/ (далее – «Сайт»).<br><br>
+                    1. Обрабатываемые данные
+                    1.1. Мы не осуществляем сбор ваших персональных данных с использованием Сайта.<br><br>
+                    1.2. Все данные, собираемые на Сайте, предоставляются и принимаются в обезличенной форме (далее – «Обезличенные данные»).<br><br>
+                    1.3. Обезличенные данные включают следующие сведения, которые не позволяют вас идентифицировать:<br><br>
+                    1.3.1. Информацию, которую вы предоставляете о себе самостоятельно с использованием онлайн-форм и
+                    программных модулей Сайта, включая имя или номер телефона и/или адрес электронной почты.<br><br>
+                    1.3.2. Данные, которые передаются в обезличенном виде в автоматическом режиме в
+                    зависимости от настроек используемого вами программного обеспечения.<br><br>
+                    1.4. Администрация вправе устанавливать требования к составу Обезличенных
+                    данных Пользователя, которые собираются использованием Сайта.<br><br>
+                    1.5. Если определенная информация не помечена как обязательная,
+                    ее предоставление или раскрытие осуществляется Пользователем на
+                    свое усмотрение и по собственной инициативе.<br><br>
+                    1.6. Администрация не осуществляет проверку достоверности предоставляемых данных и наличия у Пользователя
+mixin thanksPopup
+    .popup__wrp#thanks
+        .popup.popup-thanks
+            .popup-close
+                a(href="#close")
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 1L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1L17 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+            .popup-content
+                .section-h3.italic Спасибо
+                .popup-content__text
+                    strong Мы свяжемся с Вами в указанную дату или в ближайшее время!

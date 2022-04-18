@@ -1,0 +1,84 @@
+$uncheckedBg: #fff;
+$checkedBgRadio: #fff;
+$checkedBgCheck: #fff;
+$borderColor:#fff;
+$disabledBg: #959595;
+
+.checkbox {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 140%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    align-items: flex-start;
+    padding: 5px 0;
+
+    & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        display: none;
+    }
+
+    & .checkbox__text {
+        line-height: 140%;
+        font-weight: 500;
+    }
+
+    & .checkbox__elem {
+        position: relative;
+        height: 20px;
+        width: 20px;
+        min-width: 20px;
+        background-color: $uncheckedBg;
+        border: 1px solid $borderColor;
+        display: inline-block;
+        margin-right: rem(10);
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 8px;
+            height: 8px;
+            transition: 0.25s cubic-bezier(0.08, 0.82, 0.17, 1);
+            opacity: 0;
+            background: #AB9EDC;
+        }
+    }
+
+    & input {
+
+        &:disabled {
+            &:checked~.checkbox__elem {
+                background-color: $disabledBg;
+            }
+
+            &~.checkbox__elem {
+                background: $disabledBg;
+            }
+
+            &~.checkbox__text {
+                color: #000;
+            }
+        }
+
+        &:checked~.checkbox__elem {
+            background-color: $checkedBgCheck;
+            z-index: 1;
+        }
+
+        &:checked~.checkbox__elem:after {
+            opacity: 1;
+        }
+    }
+
+}

@@ -1,0 +1,445 @@
+extends layouts/default
+include helpers/mixins
+include ../blocks/components/form/form.pug
+include ../blocks/components/checkbox/checkbox.pug
+include ../blocks/components/headers/headers.pug
+include ../blocks/components/popup/popup.pug
+
+
+block variables
+    - const title = "Главная"
+block content
+    section.homeBanner
+        .container
+            .homeBanner-bg
+                picture
+                    source(srcset='/img/common/bg-big.webp' type='image/webp' media='(min-width: 768px)')
+                    source(srcset='/img/common/bg-big.jpg' type='image/jpeg' media='(min-width: 768px)')
+                    source(srcset='/img/common/bg-small.webp' type='image/webp')
+                    img(src='/img/common/bg-small.jpg' alt='Background') 
+            .homeBanner-content
+                ul.homeBanner-content__features
+                    li(data-aos="experienceRight" data-aos-delay="50") Современная и точная диагностика гинекологических проблем?
+                    li(data-aos="experienceRight" data-aos-delay="100") Эстетичная хирургия в гинекологии?
+                    li(data-aos="experienceRight" data-aos-delay="150") Команда ведущих гинекологов Москвы - ваши консультирующие доктора?
+                .homeBanner-content__title.section-h1(data-aos="experience" data-aos-delay="250") Cовременная <span class="italic">гинекология</span>
+                .homeBanner-content__request(data-aos="experience" data-aos-delay="300")
+                    .caption Пора заняться собой<br> и воспользоваться<br> возможностями
+                    a(href="#").btn.btn-white.btn-with-icon
+                        span Оставить заявку
+                        +icons('#ic-go',16)
+                .homeBanner-content__image(data-aos="fadeIn" data-aos-delay="350")
+                    picture
+                        source(srcset='/img/common/woman.svg' media="(min-width: 1024px)")
+                        img(src='/img/common/woman-small.svg' alt='Background')
+    section.homeAbout
+        .container
+            .homeAbout-info
+                .homeAbout-info__title.section-h3.italic(data-aos="experience") Центр Гинекологии профессора<br> Жумановой Е.Н.
+                .homeAbout-info__desc(data-aos="experience").
+                    Для правильной диагностики и решения Вашей гинекологической проблемы  в клинике
+                    «Доктор Лидер» имеется все необходимое, начиная от команды врачей-гинекологов
+                    экспертного уровня под руководством д.м.н Жумановой Е.Н., современной операционной
+                    с необходимым оборудованием и заканчивая лабораторией.
+                .homeAbout-info__features.editable-text
+                    .title(data-aos="experience") Мы занимаемся лечением таких проблем, как:
+                    ul.list
+                        li(data-aos="experienceRight" data-aos-delay="50") Безоперационное и оперативное лечение эстетических проблем в гинекологии
+                        li(data-aos="experienceRight" data-aos-delay="50") Пластика стенок влагалища
+                        li(data-aos="experienceRight" data-aos-delay="50") Операции при недержании мочи с использованием сетчатых имплантов
+                        li(data-aos="experienceRight" data-aos-delay="50").hidden Пластика малых половых губ
+                        li(data-aos="experienceRight" data-aos-delay="50").hidden Долгосрочная и краткосрочная гименопластика
+                        li(data-aos="experienceRight" data-aos-delay="50").hidden Плазмолифтинг
+                        li(data-aos="experienceRight" data-aos-delay="50").hidden Введение препаратов гиалуроновой кислоты
+                        li(data-aos="experienceRight" data-aos-delay="50").hidden Лазерный вагинальный лифтинг
+                        .showMore-btn(data-aos="experience" data-aos-delay="50")
+                            span Показать все
+                            +icons('#ic_arrow-down', 8)
+            .homeAbout-doctor
+                .homeAbout-doctor__image(data-aos="experienceLeft")
+                    picture
+                        source(srcset='/img/common/doctor.webp' type='image/webp')
+                        img(src='/img/common/doctor.jpg' alt='Background' width="328" height="328")
+                .homeAbout-doctor__desc(data-aos="fadeIn" data-aos-delay="50") Профессор Жуманова Е.Н.
+            .homeAbout-advantages
+                .homeAbout-advantages__item(data-aos="experienceLeft" data-aos-delay="50")
+                    .icon
+                        picture
+                            source(srcset='/img/common/001-doctor.webp' type='image/webp')
+                            img(src='/img/common/001-doctor.png' alt='Background' width="48" height="48")
+                    .text Команда опытных гинекологов и смежных специалистов
+                .homeAbout-advantages__item(data-aos="experienceLeft" data-aos-delay="50")
+                    .icon
+                        picture
+                            source(srcset='/img/common/002-information.webp' type='image/webp')
+                            img(src='/img/common/002-information.png' alt='Background' width="48" height="48")
+                    .text Инновационные методы лечения гинекологических патологий
+                .homeAbout-advantages__item(data-aos="experienceLeft" data-aos-delay="50")
+                    .icon
+                        picture
+                            source(srcset='/img/common/005-microscope.webp' type='image/webp')
+                            img(src='/img/common/005-microscope.png' alt='Background' width="48" height="48")
+                    .text Самое современное оборудование и инструментарий
+                .homeAbout-advantages__item(data-aos="experienceLeft" data-aos-delay="50")
+                    .icon
+                        picture
+                            source(srcset='/img/common/003-heart.webp' type='image/webp')
+                            img(src='/img/common/003-heart.png' alt='Background' width="48" height="48")
+                    .text Медицинская помощь в современной обстановке
+                .homeAbout-advantages__item(data-aos="experienceLeft" data-aos-delay="50")
+                    .icon
+                        picture
+                            source(srcset='/img/common/006-fallopian-tubes.webp' type='image/webp')
+                            img(src='/img/common/006-fallopian-tubes.png' alt='Background' width="48" height="48")
+                    .text Лечение гинекологических патологий на уровне мировых стандартов
+                .homeAbout-advantages__item(data-aos="experienceLeft" data-aos-delay="50")
+                    .icon
+                        picture
+                            source(srcset='/img/common/004-shield.webp' type='image/webp')
+                            img(src='/img/common/004-shield.png' alt='Background' width="48" height="48")
+                    .text 100%-гарантии излечения следствий гинекологических патологий
+    .symptomsForm(data-aos="experience" data-aos-delay="100")
+        .container
+            form.symptomsForm-form
+                .form__title.section-h3 Не нашли свои <span class="italic">симптомы?</span>
+                .form__desc Позвоните или оставьте заявку. Мы проконсультируем вас!
+                .form__field
+                    +input({
+                        type: "tel",
+                        placeholder: "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
+                        required: true
+                    })
+                .form__submit
+                    button.btn.btn-white.btn-with-icon
+                        span Заказать звонок
+                        +icons('#ic-go', 16)
+                .form__agreement
+                    +checkbox({
+                        label: 'Я соглашаюсь с <a href="#politica"> политикой конфиденциальности</a>',
+                        check: false,
+                        disabled: false
+                    })
+    section.homeTreatment
+        .container
+            .homeTreatment-info
+                .homeTreatment-info__title.section-h2.italic(data-aos="experience") Когда нужно обратиться к врачу?
+                .homeTreatment-info__desc.editable-text(data-aos="experience" data-aos-delay="50")
+                    p(data-aos="experience").visible.
+                        Для поддержания женского здоровья очень важен превентивный подход.
+                        Именно профилактические визиты к врачу-гинекологу позволяют
+                        предотвратить развитие заболеваний и сохранить женское здоровье.
+                    p(data-aos="experience").hidden.
+                        Женский организм имеет очень тонкую организацию, в которой может
+                        случиться сбой при стрессе, изменении гормонального фона и ряде
+                        других факторов. Следующие изменения служат пусковым моментом
+                        для записи на консультацию к врачу-гинекологу:
+                    ul.hidden
+                        li(data-aos="experienceRight" data-aos-delay="50") Сухость во влагалище
+                        li(data-aos="experienceRight" data-aos-delay="50") Недержание мочи
+                        li(data-aos="experienceRight" data-aos-delay="50") Снижение чувствительности при половых контактах
+                        li(data-aos="experienceRight" data-aos-delay="50") Ощущение «широкого» влагалища
+                        li(data-aos="experienceRight" data-aos-delay="50") Звуки из влагалища во время ведения половой жизни и занятий спортом
+                        li(data-aos="experienceRight" data-aos-delay="50") Возрастные изменения наружных половых органов
+                    .showMore-btn(data-aos="experience" data-aos-delay="50")
+                        span Показать все
+                        +icons('#ic_arrow-down', 8)
+            .homeTreatment-form(data-aos="experienceLeft" data-aos-delay="150")
+                .homeTreatment-form__caption Что происходит во время первой консультации?
+                .homeTreatment-form__title Первая консультация – <span class="italic">как первое свидание.</span>
+                .homeTreatment-form__desc.
+                    Сразу становится понятно, «твой» это врач или нет, будет ли повторный прием,
+                    есть ли доверие к специалисту. И только после установления контакта появляется
+                    возможность начать прием, провести осмотр, определиться с диагностическими
+                    исследованиями и принять совместное решение о дальнейшем лечении.
+                a(href="#").btn.btn-white.btn-with-icon
+                    span Записаться
+                    +icons('#ic-go', 16)
+    section.homeMethods
+        .container
+            .homeMethods-title.section-h2.italic.text-center(data-aos="experience") Методы диагностики в гинекологии
+            .homeMethods-desc.text-center(data-aos="experience" data-aos-delay="50").
+                Существующие медицинские технологии позволяют с точностью диагностировать гинекологические заболевания на их начальной стадии.
+                Для этого используются следующие методики:
+            .homeMethods-slider.splide
+                .splide__track
+                    ul.splide__list.homeMethods-items
+                        li.splide__slide.homeMethods-items__item(data-aos="experienceRight")
+                            .image(data-number="01")
+                                picture
+                                    source(srcset='/img/common/methods-1.webp' type='image/webp')
+                                    img(src='/img/common/methods-1.jpg' alt='Background' width="280" height="360")
+                            .number 01
+                            .name Лабораторные
+                            .text.
+                                Помимо обычного комплекса анализов (биохимический, клинический),
+                                в гинекологии активно применяются исследование отделяемого из
+                                половых органов. Это помогает выявить возбудителей инфекционных
+                                заболеваний и подобрать антибактериальную терапию. Кроме того,
+                                в лаборатории изучают образцы клеток, взятых со слизистой
+                                оболочки влагалища и шейки матки. Это необходимо
+                                для раннего выявления рака.
+                        li.splide__slide.homeMethods-items__item(data-aos="experienceRight" data-aos-delay="75")
+                            .image(data-number="02")
+                                picture
+                                    source(srcset='/img/common/methods-2.webp' type='image/webp')
+                                    img(src='/img/common/methods-2.jpg' alt='Background' width="280" height="360")
+                            .number 02
+                            .name Визуализирующие
+                            .text.
+                                К ним относятся УЗИ, компьютерная и магнитно-резонансная томография,
+                                рентгенография. Подобные процедуры отличаются высокой информативностью,
+                                а делать их можно почти всем женщинам. Исключение — беременность,
+                                при которой допускается только ультразвуковое обследование.
+                        li.splide__slide.homeMethods-items__item(data-aos="experienceRight" data-aos-delay="150")
+                            .image(data-number="03")
+                                picture
+                                    source(srcset='/img/common/methods-1.webp' type='image/webp')
+                                    img(src='/img/common/methods-1.jpg' alt='Background' width="280" height="360")
+                            .number 03
+                            .name Лабораторные
+                            .text.
+                                Помимо обычного комплекса анализов (биохимический, клинический),
+                                в гинекологии активно применяются исследование отделяемого из
+                                половых органов. Это помогает выявить возбудителей инфекционных
+                                заболеваний и подобрать антибактериальную терапию. Кроме того,
+                                в лаборатории изучают образцы клеток, взятых со слизистой
+                                оболочки влагалища и шейки матки. Это необходимо
+                                для раннего выявления рака.
+    section.homeReconstruct
+        .container
+            .section-h2.text-center.italic(data-aos="experience") Реконструктивная органосохраняющая хирургия
+            .homeReconstruct-content(data-aos="experience" data-aos-delay="75")
+                .homeReconstruct-content__title.section-h3 Запишитесь на <span class="italic">бесплатную</span> онлайн- консультацию
+                .homeReconstruct-content__desc.
+                    Заполните форму на нашем сайте, специалист внимательно всё изучит
+                    и проконсультирует по организации лечения
+                a(href="#").btn.btn-white.btn-with-icon
+                    span Записаться
+                    +icons('#ic-go', 16)
+    section.homePrevention
+        .container
+            .homePrevention-info
+                .homePrevention-info__title.section-h2.italic(data-aos="experience") Когда нужно обратиться к врачу?
+                .homePrevention-info__desc(data-aos="experience" data-aos-delay="50").
+                    Специалисты Центра Гинекологии используют как консервативные,
+                    так и оперативные методы лечения гинекологических заболеваний.
+                    Консервативная терапия предполагает назначение лекарственных
+                    препаратов. Все оперативные вмешательства, которые проводятся
+                    у нас, носят малоинвазивный характер.
+                .homePrevention-info__highlight(data-aos="experience" data-aos-delay="75")
+                    .title Но, как известно, <span class="italic"> лучшее лечение – </span> <span class="italic"> это профилактика.</span>
+                    .caption И культ женского здоровья, который поддерживается в нашей клинике, пропагандирует превентивную гинекологию.
+                .homePrevention-info__desc(data-aos="experience" data-aos-delay="100").
+                    Женщине очень сложно найти «своего» гинеколога, потому
+                    что к такому специалисту предъявляют высокие требования.
+                    Это должен быть профессионал с огромным опытом, умеющий
+                    найти подход к пациентке, понять ее, успокоить и
+                    позаботиться о ее здоровье. Ведь здоровье женщины —
+                    это благополучие ее семьи. Врач-гинеколог —
+                    это подруга, которой можно доверить себя. А дружить мы умеем.
+            .homePrevention-image(data-aos="experienceLeft" data-aos-delay="150")
+                picture
+                    source(srcset='/img/common/mask.webp' type='image/webp')
+                    img(src='/img/common/mask.jpg' alt='Background' width="328" height="328")
+    section.homeResume
+        .container
+            .section-h2.italic.text-center(data-aos="experience") Резюме клиники
+            .homeResume-slider.splide
+                .splide__track
+                    ul.splide__list.homeResume-items
+                        li.homeResume-items__item.splide__slide(data-aos="experienceRight")
+                            .image
+                                picture
+                                    source(srcset='/img/common/doc-1.webp' type='image/webp')
+                                    img(src='/img/common/doc-1.jpg' alt='Background' width="280" height="296")
+                            .name <span class="italic">Жуманова</span> Екатерина Николаевна
+                            .about.
+                                Д.М.Н, врач высшей категории, профессор кафедры восстановительной медицины и
+                                биомедицинских технологий МГМСУ им А.И. Евдокимова, член правления
+                                ассоциации специалистов по эстетической гинекологи АСЭГ,
+                                член международного сообщества пельвиоперинеологов.
+                            a(href="#").btn.btn-ghost.btn-with-icon
+                                span Читать полностью
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 1H17M17 1V10M17 1L1 17" stroke="#244190" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            a(href="#").btn.btn-filled.btn-with-icon
+                                span Записаться на приём
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 1H17M17 1V10M17 1L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        li.homeResume-items__item.splide__slide(data-aos="experienceRight" data-aos-delay="75")
+                            .image
+                                picture
+                                    source(srcset='/img/common/doc-2.webp' type='image/webp')
+                                    img(src='/img/common/doc-2.jpg' alt='Background' width="280" height="296")
+                            .name <span class="italic">Жуманова</span> Екатерина Николаевна
+                            .about.
+                                Д.М.Н, врач высшей категории, профессор кафедры восстановительной медицины и
+                                биомедицинских технологий МГМСУ им А.И. Евдокимова, член правления
+                                ассоциации специалистов по эстетической гинекологи АСЭГ,
+                                член международного сообщества пельвиоперинеологов.
+                            a(href="#").btn.btn-ghost.btn-with-icon
+                                span Читать полностью
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 1H17M17 1V10M17 1L1 17" stroke="#244190" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            a(href="#").btn.btn-filled.btn-with-icon
+                                span Записаться на приём
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 1H17M17 1V10M17 1L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        li.homeResume-items__item.splide__slide(data-aos="experienceRight" data-aos-delay="150")
+                            .image
+                                picture
+                                    source(srcset='/img/common/doc-3.webp' type='image/webp')
+                                    img(src='/img/common/doc-3.jpg' alt='Background' width="280" height="296")
+                            .name <span class="italic">Жуманова</span> Екатерина Николаевна
+                            .about.
+                                Д.М.Н, врач высшей категории, профессор кафедры восстановительной медицины и
+                                биомедицинских технологий МГМСУ им А.И. Евдокимова, член правления
+                                ассоциации специалистов по эстетической гинекологи АСЭГ,
+                                член международного сообщества пельвиоперинеологов.
+                            a(href="#").btn.btn-ghost.btn-with-icon
+                                span Читать полностью
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 1H17M17 1V10M17 1L1 17" stroke="#244190" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            a(href="#").btn.btn-filled.btn-with-icon
+                                span Записаться на приём
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 1H17M17 1V10M17 1L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+    section.homePricelist
+        .container
+            .homePricelist-title.section-h2.italic(data-aos="experience") Прайс-лист
+            .homePricelist-items
+                .homePricelist-items__item(data-aos="experience" data-aos-delay="50")
+                    .name Первичная консультация акушера-гинеколога
+                    .value 3 000 ₽
+                .homePricelist-items__item(data-aos="experience" data-aos-delay="50")
+                    .name Первичная консультация гинеколога-эндокринолога
+                    .value 3 000 ₽
+                .homePricelist-items__item(data-aos="experience" data-aos-delay="50")
+                    .name Консультация по беременности
+                    .value 3 000 ₽
+                .homePricelist-items__item(data-aos="experience" data-aos-delay="50")
+                    .name Кольпоскопия расширенная ( с окрашиванием)
+                    .value 3 000 ₽
+                .homePricelist-items__item(data-aos="experience" data-aos-delay="50").hidden
+                    .name Первичная консультация акушера-гинеколога
+                    .value 3 000 ₽
+                .homePricelist-items__item(data-aos="experience" data-aos-delay="50").hidden
+                    .name Первичная консультация гинеколога-эндокринолога
+                    .value 3 000 ₽
+                .homePricelist-items__item(data-aos="experience" data-aos-delay="50").hidden
+                    .name Консультация по беременности
+                    .value 3 000 ₽
+                .homePricelist-items__item(data-aos="experience" data-aos-delay="50").hidden
+                    .name Кольпоскопия расширенная ( с окрашиванием)
+                    .value 3 000 ₽
+            a(href="#" data-aos-delay="50").btn.btn-filled.btn-with-icon
+                span Смотреть весь прайс-лист
+                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1H17M17 1V10M17 1L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+    section.homeGallery
+        .container
+            .section-h2.italic(data-aos="experience") Наша клиника
+            .homeGallery-slider.splide
+                .splide__track
+                    ul.splide__list.homeGallery-items
+                        li.homeGallery-items__item.splide__slide(data-aos="experienceRight")
+                            a(data-fslightbox href="/img/common/gallery-1.jpg").image
+                                picture
+                                    source(srcset='/img/common/gallery-1.webp' type='image/webp')
+                                    img(src='/img/common/gallery-1.jpg' alt='Background' width="280" height="208")
+                        li.homeGallery-items__item.splide__slide(data-aos="experienceRight")
+                            a(data-fslightbox href="/img/common/gallery-2.jpg").image
+                                picture
+                                    source(srcset='/img/common/gallery-2.webp' type='image/webp')
+                                    img(src='/img/common/gallery-2.jpg' alt='Background' width="280" height="208")
+                        li.homeGallery-items__item.splide__slide(data-aos="experienceRight")
+                            a(data-fslightbox href="/img/common/gallery-3.jpg").image
+                                picture
+                                    source(srcset='/img/common/gallery-3.webp' type='image/webp')
+                                    img(src='/img/common/gallery-3.jpg' alt='Background' width="280" height="208")
+                        li.homeGallery-items__item.splide__slide(data-aos="experienceRight")
+                            a(data-fslightbox href="/img/common/gallery-4.jpg").image
+                                picture
+                                    source(srcset='/img/common/gallery-4.webp' type='image/webp')
+                                    img(src='/img/common/gallery-4.jpg' alt='Background' width="280" height="208")
+    section.homeReviews
+        .container
+            .section-h2.italic(data-aos="experience") Отзывы пациентов
+            .homeReviews-slider.splide
+                .splide__track
+                    ul.splide__list.homeReviews-items
+                        li.homeReviews-items__item.splide__slide(data-aos="experienceRight")
+                            .icon
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M40 33.7991C40 33.7991 31.6374 40 21.3216 40C11.0058 40 2.64317 37.2238 2.64317 33.7991C2.64317 30.3745 11.0058 27.5983 21.3216 27.5983C31.6374 27.5983 40 33.7991 40 33.7991Z" fill="#98A8D6"/>
+                                <path d="M6.25551 0C6.25551 0 -4.50918e-07 8.28957 0 18.5153C4.50918e-07 28.741 2.80069 37.0306 6.25551 37.0306C9.71033 37.0306 12.511 28.741 12.511 18.5153C12.511 8.28957 6.25551 0 6.25551 0Z" fill="#98A8D6"/>
+                                <path d="M29.7813 9.45018C29.7813 9.45018 28.2914 19.6965 20.997 26.9271C13.7026 34.1578 5.80897 38.0563 3.36604 35.6347C0.923116 33.2132 4.85599 25.3884 12.1504 18.1578C19.4447 10.9271 29.7813 9.45018 29.7813 9.45018Z" fill="#98A8D6"/>
+                                </svg>
+                            .patient
+                                .patient-name Мария
+                                .patient-date 01.02.2022
+                            .text.
+                                Помимо обычного комплекса анализов (биохимический, клинический),
+                                в гинекологии активно применяются исследование отделяемого из
+                                половых органов. Это помогает выявить возбудителей инфекционных
+                                заболеваний и подобрать антибактериальную терапию...
+                            .stars
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                        li.homeReviews-items__item.splide__slide(data-aos="experienceRight" data-aos-delay="75")
+                            .icon
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M40 33.7991C40 33.7991 31.6374 40 21.3216 40C11.0058 40 2.64317 37.2238 2.64317 33.7991C2.64317 30.3745 11.0058 27.5983 21.3216 27.5983C31.6374 27.5983 40 33.7991 40 33.7991Z" fill="#98A8D6"/>
+                                <path d="M6.25551 0C6.25551 0 -4.50918e-07 8.28957 0 18.5153C4.50918e-07 28.741 2.80069 37.0306 6.25551 37.0306C9.71033 37.0306 12.511 28.741 12.511 18.5153C12.511 8.28957 6.25551 0 6.25551 0Z" fill="#98A8D6"/>
+                                <path d="M29.7813 9.45018C29.7813 9.45018 28.2914 19.6965 20.997 26.9271C13.7026 34.1578 5.80897 38.0563 3.36604 35.6347C0.923116 33.2132 4.85599 25.3884 12.1504 18.1578C19.4447 10.9271 29.7813 9.45018 29.7813 9.45018Z" fill="#98A8D6"/>
+                                </svg>
+                            .patient
+                                .patient-name Мария
+                                .patient-date 01.02.2022
+                            .text.
+                                Помимо обычного комплекса анализов (биохимический, клинический),
+                                в гинекологии активно применяются исследование отделяемого из
+                                половых органов. Это помогает выявить возбудителей инфекционных
+                                заболеваний и подобрать антибактериальную терапию...
+                            .stars
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                        li.homeReviews-items__item.splide__slide(data-aos="experienceRight" data-aos-delay="150")
+                            .icon
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M40 33.7991C40 33.7991 31.6374 40 21.3216 40C11.0058 40 2.64317 37.2238 2.64317 33.7991C2.64317 30.3745 11.0058 27.5983 21.3216 27.5983C31.6374 27.5983 40 33.7991 40 33.7991Z" fill="#98A8D6"/>
+                                <path d="M6.25551 0C6.25551 0 -4.50918e-07 8.28957 0 18.5153C4.50918e-07 28.741 2.80069 37.0306 6.25551 37.0306C9.71033 37.0306 12.511 28.741 12.511 18.5153C12.511 8.28957 6.25551 0 6.25551 0Z" fill="#98A8D6"/>
+                                <path d="M29.7813 9.45018C29.7813 9.45018 28.2914 19.6965 20.997 26.9271C13.7026 34.1578 5.80897 38.0563 3.36604 35.6347C0.923116 33.2132 4.85599 25.3884 12.1504 18.1578C19.4447 10.9271 29.7813 9.45018 29.7813 9.45018Z" fill="#98A8D6"/>
+                                </svg>
+                            .patient
+                                .patient-name Мария
+                                .patient-date 01.02.2022
+                            .text.
+                                Помимо обычного комплекса анализов (биохимический, клинический),
+                                в гинекологии активно применяются исследование отделяемого из
+                                половых органов. Это помогает выявить возбудителей инфекционных
+                                заболеваний и подобрать антибактериальную терапию...
+                            .stars
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+                                +icons('#ic_star', 16)
+    +callbackPopup()
+    +politicaPopup()
+    +thanksPopup()
+block scripts
+    script(src="js/main.js")

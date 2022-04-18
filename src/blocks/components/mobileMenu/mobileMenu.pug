@@ -1,0 +1,16 @@
+include ../../components/burger/burger
+.mobileMenu
+  .container
+    .mobileMenu-header
+      .mobileMenu-header__toggle
+        +burger('open')
+    .mobileMenu-nav
+      ul.mobileMenu-nav__ul
+        li: a(href="#breadcrumbs") Breadcrumbs
+        li: a(href="#buttons") Buttons
+        li: a(href="#inputs") Inputs
+        li: a(href="#selects") Selects
+        li: a(href="#forms") Form
+        li: a(href="#checkbox") Checkboxes
+        li: a(href="#edittext") Text
+    .mobileMenu-footer

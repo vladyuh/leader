@@ -1,0 +1,32 @@
+$symbol: ' - ';
+
+.breadcrumb {
+    background-color: transparent;
+    & ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    & li {
+        & a {
+            &:hover {
+                text-decoration: underline;
+            }
+            &.is-active{
+                font-weight: 600;
+            }
+        }
+        &::after {
+            content: $symbol;
+            display: inline-block;
+            border-radius: 50%;
+            position: relative;
+            padding: 0 5px;
+        }
+        &:last-child::after {
+            display: none;
+        }
+    }
+}
